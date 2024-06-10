@@ -1,4 +1,5 @@
 "use client";
+import QuoteCard from "@/components/QuoteCard";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -31,9 +32,7 @@ export default function Home() {
   return (
     <main className="p-4">
       <div className="">Current Quote: </div>
-      <div className="border-2 border-black rounded-lg p-4 w-auto my-2">
-        {data}
-      </div>
+      <QuoteCard quote={data} />
       <div>
         <button
           className="p-2 text-white bg-orange-500 rounded mr-2"
@@ -55,9 +54,7 @@ export default function Home() {
         <div>
           <div className="">Saved Quotes: </div>
           {savedQuotes.map((item) => (
-            <div className="border-2 border-black rounded-lg p-4 w-auto my-2">
-              {item}
-            </div>
+            <QuoteCard quote={item} />
           ))}
         </div>
       )}
